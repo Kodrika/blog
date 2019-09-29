@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 
+require('laravel-mix-purgecss');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,5 +13,15 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.styles([
+    'resources/css/animate.min.css',
+    'resources/css/prism.css',
+    'resources/css/tailwind.css',
+], 'public/css/blog.min.css').purgeCss();
+
+mix.scripts([
+    'resources/js/prism.js',
+    'resources/js/app.js'
+], 'public/js/blog.min.js');
+
+mix.copyDirectory('resources/images', 'public/images');
