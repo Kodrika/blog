@@ -23,40 +23,40 @@ class GeneralService
         return $data;
     }
 
-    public function generateTag($titleAppend = NULL, $descriptionAppend = NULL, $keywordsAppend = NULL, $ogType = 'website', $twitterCard = 'summary', $newOgImage = NULL, $newTwitterImage = NULL)
+    public function generateTag($titleAppend = null, $descriptionAppend = null, $keywordsAppend = null, $ogType = 'website', $twitterCard = 'summary', $newOgImage = null, $newTwitterImage = null)
     {
         $seo = config('project.seo');
 
         $locale = app()->getLocale();
 
-        if(!isset($seo[$locale])){
+        if (! isset($seo[$locale])) {
             $seo = $seo['tr'];
-        }else{
+        } else {
             $seo = $seo[$locale];
         }
 
         $title = $seo['title'];
-        if ($titleAppend != NULL) {
+        if ($titleAppend != null) {
             $title = strip_tags($titleAppend).' - '.$seo['title'];
         }
 
         $description = $seo['description'];
-        if ($descriptionAppend != NULL) {
+        if ($descriptionAppend != null) {
             $description = $descriptionAppend.' - '.$seo['description'];
         }
 
         $keywords = $seo['keywords'];
-        if ($keywordsAppend != NULL) {
+        if ($keywordsAppend != null) {
             $keywords = $keywordsAppend.' - '.$seo['keywords'];
         }
 
         $ogImage = asset('images/social/'.config('project.ogImage'));
-        if ($newOgImage != NULL) {
+        if ($newOgImage != null) {
             $ogImage = $newOgImage;
         }
 
         $twitterImage = asset('images/social/'.config('project.twitterImage'));
-        if ($newTwitterImage != NULL) {
+        if ($newTwitterImage != null) {
             $twitterImage = $newTwitterImage;
         }
 
@@ -88,5 +88,4 @@ class GeneralService
     {
         view()->share($key, $data);
     }
-
 }
