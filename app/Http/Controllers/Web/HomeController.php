@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Services\HomeService;
-use App\Services\GeneralService;
 use App\Http\Controllers\Controller;
+use App\Services\GeneralService;
+use App\Services\HomeService;
 
 class HomeController extends Controller
 {
