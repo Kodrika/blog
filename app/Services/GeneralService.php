@@ -8,17 +8,26 @@ class GeneralService
 {
     public function generateData($menu = 0)
     {
+        //Menu
         $data['menu'] = $menu;
 
-        $data['user'] = auth()->user();
-
-        $data['lang'] = app()->getLocale();
+        //Navbar
+        $data['navbar'] = Cache::rememberForever('navbar',function()
+        {
+            $return = [];
+            $navbar = \App\Models\Navigation::sort()->get();
+            foreach($navbar as $v){
+                $return[$v->id]=array(
+                    'name' => $v->name,
+                    'url' => $v->url,
+                );
+            }
+            return $return;
+        });
 
         view()->share('menu', $data['menu']);
 
-        view()->share('user', $data['user']);
-
-        view()->share('lang', $data['lang']);
+        view()->share('navbar', $data['navbar']);
 
         return $data;
     }

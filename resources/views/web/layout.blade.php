@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ App::getLocale() }}">
 <head>
     @include('partials.meta')
     <link rel="stylesheet" href="{!! asset('css/blog.min.css') !!}" type="text/css">
@@ -12,7 +12,6 @@
         </p>
     </div>
 </div>
-<!-- Content -->
 <div class="container px-2 md:px-0 max-w-6xl mx-auto -mt-32">
     <div class="mx-0 sm:mx-6">
        @yield('content')
@@ -41,7 +40,6 @@
 <button id="scrollToTop" class="hidden fixed right-0 bottom-0 mb-5 mr-5 bg-darkslategray font-semibold py-2 px-4 border border-white rounded">
     <i class="fa fa-arrow-up text-white"></i>
 </button>
-<!-- Assets -->
 <script src="{!! asset('js/blog.min.js') !!}" type="application/javascript"></script>
 </body>
 </html>

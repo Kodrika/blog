@@ -12,4 +12,20 @@ return [
 
     'logo' => env('BLOG_LOGO', 'true'),
 
+    'social' => [
+
+        'gitlab' => env('BLOG_SOCIAL_GITLAB', '#'),
+
+        'github' => env('BLOG_SOCIAL_GITHUB', '#'),
+
+        'facebook' => env('BLOG_SOCIAL_FACEBOOK', '#'),
+
+        'twitter' => env('BLOG_SOCIAL_TWITTER', '#'),
+
+        'linkedin' => env('BLOG_SOCIAL_LINKEDIN', '#'),
+
+    ],
+
+    'rss' => env('BLOG_RSS', 'true'),
+
 ];
