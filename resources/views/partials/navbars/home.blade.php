@@ -11,14 +11,14 @@
             </ul>
         </div>
         <div class="flex w-1/2 sm:w-full md:w-full justify-end content-center  hidden md:hidden lg:flex xl:flex">
-            <a id="search-toggle" class="search-icon cursor-pointer inline-block text-white no-underline text-center h-10 p-2 md:h-auto md:p-4 hover:opacity-75" href="#">
+            <a id="search-toggle" class="search-icon cursor-pointer inline-block text-white no-underline text-center h-10 p-2 md:h-auto md:p-4 hover:opacity-75" href="javascript:">
                 <i class="fa fa-search"></i>
             </a>
             @include('partials.social')
         </div>
         <div class="block lg:hidden xl:hidden w-full">
             <button id="nav-toggle" class="float-right px-3 py-2 border rounded text-white border-white mb-2">
-                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>{!! __('Menu') !!}</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
             </button>
         </div>
     </div>
@@ -36,8 +36,8 @@
     </div>
     <div class="relative w-full hidden bg-white shadow-xl rounded mb-2" id="search-content">
         <div class="container mx-auto py-4 text-black">
-            <form action="#" method="get">
-                <input id="searchfield" type="search" name="keyword" placeholder="Search..." autofocus="autofocus"
+            <form action="{!! route('web.home') !!}" method="get">
+                <input type="search" name="search" placeholder="{!! __('Search...') !!}" autofocus="autofocus"
                        class="font-libre w-full text-grey-800 transition focus:outline-none focus:border-transparent p-2 appearance-none leading-normal text-xl lg:text-2xl" />
             </form>
         </div>
