@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use DateTime;
+use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-
     public const DRAFT = 0;
 
     public const ACTIVE = 1;
@@ -34,23 +33,24 @@ class Article extends Model
         $date = new DateTime();
         $date->setTimestamp($this->created_at->timestamp);
         $interval = $date->diff(new DateTime('now'));
-        $check = (int)$interval->format('%y');
-        if($check > 0){
+        $check = (int) $interval->format('%y');
+        if ($check > 0) {
             return $check.' '.__('years').' '.__('ago');
         }
-        $check = (int)$interval->format('%m');
-        if($check > 0){
+        $check = (int) $interval->format('%m');
+        if ($check > 0) {
             return $check.' '.__('months').' '.__('ago');
         }
-        $check = (int)$interval->format('%d');
-        if($check > 0){
+        $check = (int) $interval->format('%d');
+        if ($check > 0) {
             return $check.' '.__('days').' '.__('ago');
         }
-        $check = (int)$interval->format('%h');
-        if($check > 0){
+        $check = (int) $interval->format('%h');
+        if ($check > 0) {
             return $check.' '.__('hours').' '.__('ago');
         }
-        return (int)$interval->format('%i').' '.__('minutes').' '.__('ago');
+
+        return (int) $interval->format('%i').' '.__('minutes').' '.__('ago');
     }
 
     public function getImageUrlAttribute()
@@ -60,7 +60,7 @@ class Article extends Model
 
     public function getArticleUrlAttribute()
     {
-        return route('web.category.article',[
+        return route('web.category.article', [
             'category' => $this->category->slug,
             'article' => $this->slug,
         ]);

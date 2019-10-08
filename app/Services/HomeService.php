@@ -6,12 +6,11 @@ use App\Models\Article;
 
 class HomeService
 {
-
     public function getFeatured()
     {
         $featured = false;
 
-        if((!isset(request()->page) || request()->page == 1) && !isset(request()->search)){
+        if ((! isset(request()->page) || request()->page == 1) && ! isset(request()->search)) {
             $featured = Article::featured()->with('category')->first();
         }
 
@@ -28,5 +27,4 @@ class HomeService
 
         return $articles;
     }
-
 }
