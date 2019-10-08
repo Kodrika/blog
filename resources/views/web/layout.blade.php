@@ -7,9 +7,11 @@
 <body class="bg-gray-200 font-sans leading-normal tracking-normal">
 <div id="logo" class="w-full m-0 p-0 bg-cover bg-bottom bg-cover-lake">
     <div class=" max-w-4xl mx-auto pt-8 text-center break-normal">
-        <p class="text-white font-extrabold text-2xl md:text-3xl font-libre">
-            {!! config('project.name') !!}
-        </p>
+        <a href="{!! route('web.home') !!}" class="no-underline">
+            <p class="text-white font-extrabold text-2xl md:text-3xl font-libre">
+                {!! config('project.name') !!}
+            </p>
+        </a>
     </div>
 </div>
 <div class="container px-2 md:px-0 max-w-6xl mx-auto -mt-32">
