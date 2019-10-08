@@ -14,5 +14,11 @@
     "Send Password Reset Link": "Parola Unuttum Bildirimi Gönder",
     "You are receiving this email because we received a password reset request for your account.": "Parola unuttuğunuzu belirttiğiniz için bu sıfırlama mesajı gönderilmiştir.",
     "Menu": "Menü",
-    "Search...": "Ara..."
+    "Search...": "Ara...",
+    "years": "yıl",
+    "months": "ay",
+    "days": "gün",
+    "hours": "saat",
+    "minutes": "dakika",
+    "ago": "önce"
 }

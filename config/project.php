@@ -2,6 +2,8 @@
 
 return [
 
+    'demo' => env('BLOG_DEMO', 'true'),
+
     'name' => env('BLOG_NAME', 'Laravel'),
 
     'author' => env('BLOG_AUTHOR', 'Kodrika'),
@@ -27,5 +29,7 @@ return [
     ],
 
     'rss' => env('BLOG_RSS', 'true'),
+
+    'perPage' => env('BLOG_PER_PAGE', '9'),
 
 ];

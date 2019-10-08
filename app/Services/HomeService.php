@@ -2,26 +2,31 @@
 
 namespace App\Services;
 
-use App\Models\Blog;
-use App\Models\Work;
+use App\Models\Article;
 
 class HomeService
 {
-    public function getWorks()
+
+    public function getFeatured()
     {
-        $works = Work::home()->orderBy('order', 'asc')->take(8)->get();
+        $featured = false;
 
-        view()->share('works', $works);
+        if((!isset(request()->page) || request()->page == 1) && !isset(request()->search)){
+            $featured = Article::featured()->with('category')->first();
+        }
 
-        return $works;
+        view()->share('featured', $featured);
+
+        return $featured;
     }
 
-    public function getBlog()
+    public function getArticles()
     {
-        $blog = Blog::orderBy('id', 'desc')->take(3)->get();
+        $articles = Article::with('category')->paginate(config('project.perPage'));
 
-        view()->share('blog', $blog);
+        view()->share('articles', $articles);
 
-        return $blog;
+        return $articles;
     }
+
 }
