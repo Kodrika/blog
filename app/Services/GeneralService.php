@@ -12,16 +12,16 @@ class GeneralService
         $data['menu'] = $menu;
 
         //Navbar
-        $data['navbar'] = Cache::rememberForever('navbar',function()
-        {
+        $data['navbar'] = Cache::rememberForever('navbar', function () {
             $return = [];
             $navbar = \App\Models\Navigation::sort()->get();
-            foreach($navbar as $v){
-                $return[$v->id]=array(
+            foreach ($navbar as $v) {
+                $return[$v->id] = [
                     'name' => $v->name,
                     'url' => $v->url,
-                );
+                ];
             }
+
             return $return;
         });
 
