@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Category;
+use Illuminate\Database\Seeder;
 
 class CategoryTableSeeder extends Seeder
 {
@@ -12,7 +12,7 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        if(config('project.demo')){
+        if (config('project.demo')) {
             $item = new Category();
             $item->name = 'PHP';
             $item->slug = 'php';

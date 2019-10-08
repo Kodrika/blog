@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         $this->general = $general;
         $this->home = $home;
-        if(request()->search){
+        if (request()->search) {
             $this->middleware('throttle:30,1');
         }
     }

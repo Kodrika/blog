@@ -12,5 +12,4 @@ Route::get('{category}', 'Web\HomeController@index')->name('web.category');
 //Article Detail
 Route::get('{category}/{article}', 'Web\HomeController@index')->name('web.category.article');
 
-
 Auth::routes();
