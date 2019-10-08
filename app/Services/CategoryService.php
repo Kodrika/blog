@@ -7,7 +7,6 @@ use App\Models\Category;
 
 class CategoryService
 {
-
     public function getCategoryArticles($category)
     {
         $category = Category::where('slug', $category)->firstOrFail();
