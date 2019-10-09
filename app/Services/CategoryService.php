@@ -12,8 +12,9 @@ class CategoryService
     {
         $page = Page::where('slug', $category)->first();
 
-        if(!$page)
-            return NULL;
+        if (! $page) {
+            return;
+        }
 
         view()->share('page', $page);
 
