@@ -2,16 +2,25 @@
 
 namespace App\Models;
 
+use App\Models\Traits\FullTextSearch;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+
+    use FullTextSearch;
+
     public const DRAFT = 0;
 
     public const ACTIVE = 1;
 
     public const FEATURED = 2;
+
+    protected $searchable = [
+        'name',
+        'summary'
+    ];
 
     public function scopeActive($query)
     {

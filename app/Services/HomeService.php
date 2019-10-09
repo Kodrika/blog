@@ -6,6 +6,18 @@ use App\Models\Article;
 
 class HomeService
 {
+    public function checkSearch()
+    {
+        $data['search'] = request()->search;
+
+        if (!$data['search'])
+            return null;
+
+        $data['articles'] = Article::search($data['search'])->with('category')->paginate(config('project.perPage'));
+
+        response()->view('web.search', $data)->throwResponse();
+    }
+
     public function getFeatured()
     {
         $featured = false;

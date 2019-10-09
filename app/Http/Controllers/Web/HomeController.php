@@ -25,6 +25,7 @@ class HomeController extends Controller
     {
         $this->general->generateData();
         $this->general->generateTag();
+        $this->home->checkSearch();
         $this->home->getFeatured();
         $this->home->getArticles();
         $this->general->showView('web.home');
