@@ -8,7 +8,7 @@ class OpenSearchService
     {
         return response()->view('partials.opensearch')
             ->withHeaders([
-                'Content-Type' => 'text/xml'
+                'Content-Type' => 'text/xml',
             ])->throwResponse();
     }
 }

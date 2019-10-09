@@ -7,7 +7,6 @@ use App\Services\OpenSearchService;
 
 class OpenSearchController extends Controller
 {
-
     protected $search;
 
     public function __construct(OpenSearchService $search)
