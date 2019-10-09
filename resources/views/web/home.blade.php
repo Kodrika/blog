@@ -1,7 +1,6 @@
-@extends('web.layout')
+@extends('layouts.web.app')
 
 @section('content')
-    @include('partials.navbars.home')
     <div class="bg-transparent w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
         @if($featured)
             <div class="flex h-full bg-white rounded overflow-hidden shadow-lg">

@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html lang="{{ App::getLocale() }}">
-<head>
-    @include('partials.meta')
-    <link rel="stylesheet" href="{!! asset('css/blog.min.css') !!}" type="text/css">
-</head>
-<body class="bg-gray-200 font-sans leading-normal tracking-normal">
-<div id="logo" class="w-full m-0 p-0 bg-cover bg-bottom bg-cover-lake">
-    <div class=" max-w-4xl mx-auto pt-8 text-center break-normal">
-        <a href="{!! route('web.home') !!}" class="no-underline">
-            <p class="text-white font-extrabold text-2xl md:text-3xl font-libre">
-                {!! config('project.name') !!}
-            </p>
-        </a>
-    </div>
-</div>
-<div class="container px-2 md:px-0 max-w-6xl mx-auto -mt-32">
-    <div class="mx-0 sm:mx-6">
-       @yield('content')
-    </div>
-</div>
 <footer class="bg-darkslategray mt-5">
     <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
         <div class="w-full mx-auto flex flex-wrap items-center">
@@ -42,6 +21,3 @@
 <button id="scrollToTop" class="hidden fixed right-0 bottom-0 mb-5 mr-5 bg-darkslategray font-semibold py-2 px-4 border border-white rounded">
     <i class="fa fa-arrow-up text-white"></i>
 </button>
-<script src="{!! asset('js/blog.min.js') !!}" type="application/javascript"></script>
-</body>
-</html>
