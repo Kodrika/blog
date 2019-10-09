@@ -35,3 +35,4 @@
 <meta name="twitter:description" content="{!! $meta['description'] !!}">
 <meta name="twitter:image" content="{!! $meta['twitterImage'] !!}">
 <meta property="twitter:url" content="{{ url()->current() }}" />
+<link rel="search" type="application/opensearchdescription+xml" href="{!! route('web.opensearch') !!}" title="{!! config('app.name') !!}" />
