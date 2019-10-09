@@ -10,8 +10,9 @@ class HomeService
     {
         $data['search'] = request()->search;
 
-        if (!$data['search'])
-            return null;
+        if (! $data['search']) {
+            return;
+        }
 
         $data['articles'] = Article::search($data['search'])->with('category')->paginate(config('project.perPage'));
 

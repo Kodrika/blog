@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-
     use FullTextSearch;
 
     public const DRAFT = 0;
@@ -19,7 +18,7 @@ class Article extends Model
 
     protected $searchable = [
         'name',
-        'summary'
+        'summary',
     ];
 
     public function scopeActive($query)
