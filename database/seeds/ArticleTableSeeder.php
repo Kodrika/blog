@@ -34,7 +34,7 @@ class ArticleTableSeeder extends Seeder
                 $item->summary = 'Thats not what i saw in my head at all make it sexy can you make it look like this clipart i found or concept is bang on, but can we look at a better execution. The website doesn\'t have the theme i was going for can you make the logo bigger yes bigger bigger still the logo is too big but that will be a conversation piece can my website be in english? there are more projects lined up charge extra the next time. This looks perfect. Just Photoshop out the dog, add a baby, and make the curtains blue can the black be darker yet im not sure, try something else, can you help me out? you will get a lot of free exposure doing this nor that will be a conversation piece thanks for taking the time to make the website, but i already made it in wix.';
                 $item->description = 'Featured Post';
                 $item->save();
-                
+
                 $item->attachTags(['php', 'laravel']);
             }
         }
