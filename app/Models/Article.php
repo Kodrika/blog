@@ -10,7 +10,6 @@ use Spatie\Tags\HasTags;
 class Article extends Model
 {
     use FullTextSearch;
-
     use HasTags;
 
     public const DRAFT = 0;
