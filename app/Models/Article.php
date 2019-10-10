@@ -5,10 +5,13 @@ namespace App\Models;
 use App\Models\Traits\FullTextSearch;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Tags\HasTags;
 
 class Article extends Model
 {
     use FullTextSearch;
+
+    use HasTags;
 
     public const DRAFT = 0;
 
