@@ -17,7 +17,7 @@ class TagService
 
         $tag = Tag::findFromString($tag);
 
-        if($tag){
+        if ($tag) {
             $service->generateTag($tag->name.' '.__('Tag'));
         }
 
