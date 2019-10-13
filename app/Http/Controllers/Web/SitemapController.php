@@ -7,7 +7,6 @@ use App\Services\SitemapService;
 
 class SitemapController extends Controller
 {
-
     protected $sitemap;
 
     public function __construct(SitemapService $sitemap)

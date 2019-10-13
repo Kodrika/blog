@@ -7,7 +7,6 @@ use App\Services\SitemapService;
 
 class RssController extends Controller
 {
-
     protected $sitemap;
 
     public function __construct(SitemapService $sitemap)
