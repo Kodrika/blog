@@ -13,6 +13,5 @@
     </main>
     @include('partials.footer')
 <script src="{!! asset('js/blog.min.js') !!}" type="application/javascript"></script>
-
 </body>
 </html>
