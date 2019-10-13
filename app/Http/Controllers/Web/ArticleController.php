@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Services\GeneralService;
 use App\Services\ArticleService;
+use App\Services\GeneralService;
 
 class ArticleController extends Controller
 {
