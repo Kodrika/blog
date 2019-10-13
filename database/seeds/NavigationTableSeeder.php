@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Models\Navigation;
+use Illuminate\Database\Seeder;
 
 class NavigationTableSeeder extends Seeder
 {
