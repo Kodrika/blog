@@ -9,7 +9,7 @@ class ArticleService
 {
     public function getArticle($category, $slug)
     {
-        $article = Article::whereHas('category', function (Builder $query) use($category) {
+        $article = Article::whereHas('category', function (Builder $query) use ($category) {
             $query->where('slug', $category);
         })->where('slug', $slug)->with('category', 'tags')->firstOrFail();
 
