@@ -16,6 +16,6 @@ Route::get('tag/{tag}', 'Web\TagController@index')->name('web.tag');
 Route::get('{category}', 'Web\CategoryController@index')->name('web.category');
 
 //Article Detail
-Route::get('{category}/{article}', 'Web\HomeController@index')->name('web.category.article');
+Route::get('{category}/{article}', 'Web\ArticleController@show')->name('web.category.article');
 
 Auth::routes();

@@ -23,6 +23,7 @@ class CreateArticlesTable extends Migration
             $table->string('reading_time');
             $table->string('summary', '1000');
             $table->string('description', '1000');
+            $table->mediumText('content')->nullable();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories');

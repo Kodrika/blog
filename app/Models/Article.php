@@ -10,6 +10,7 @@ use Spatie\Tags\HasTags;
 class Article extends Model
 {
     use FullTextSearch;
+
     use HasTags;
 
     public const DRAFT = 0;
@@ -22,6 +23,10 @@ class Article extends Model
         'name',
         'summary',
     ];
+
+    /*
+     * SCOPES
+     */
 
     public function scopeActive($query)
     {
@@ -37,6 +42,10 @@ class Article extends Model
     {
         return $query->where('status', self::FEATURED);
     }
+
+    /*
+     * ATTRIBUTES
+     */
 
     public function getTimeAgoAttribute()
     {
@@ -91,6 +100,17 @@ class Article extends Model
 
         return $text;
     }
+
+    public function getLocalizedDateAttribute()
+    {
+        setlocale(LC_TIME, 'tr_TR@TL', 'tr_TR', 'tr', 'Turkish');
+
+        return $this->created_at->formatLocalized('%d %B %Y');
+    }
+
+    /*
+     * RELATIONS
+     */
 
     public function category()
     {

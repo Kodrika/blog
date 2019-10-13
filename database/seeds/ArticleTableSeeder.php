@@ -21,8 +21,12 @@ class ArticleTableSeeder extends Seeder
             $item->slug = 'featured-post';
             $item->reading_time = '1 Min Read';
             $item->summary = 'Are you busy this weekend? I have a new project with a tight deadline can you make it faster? or something summery; colourful, nor could you rotate the picture to show the other side of the room? nor can you put "find us on facebook" by the facebook logo? could you move it a tad to the left I need a website. How much will it cost. Needs to be sleeker I know somebody who can do this for a reasonable cost, so i\'ll know it when i see it. Mmm, exactly like that, but different can it be more retro i\'ll pay you in a week we don\'t need to pay upfront i hope you understand i\'ll pay you in a week we don\'t need to pay upfront i hope you understand. You can get my logo from facebook can you punch up the fun level on these icons but this looks perfect. Just Photoshop out the dog, add a baby, and make the curtains blue, or that sandwich needs to be more playful we are a non-profit organization, nor start on it today and we will talk about what i want next time . Could you do an actual logo instead ';
+            $item->content = 'Are you busy this weekend? I have a new project with a tight deadline can you make it faster? or something summery; colourful, nor could you rotate the picture to show the other side of the room? nor can you put "find us on facebook" by the facebook logo? could you move it a tad to the left I need a website. How much will it cost. Needs to be sleeker I know somebody who can do this for a reasonable cost, so i\'ll know it when i see it. Mmm, exactly like that, but different can it be more retro i\'ll pay you in a week we don\'t need to pay upfront i hope you understand i\'ll pay you in a week we don\'t need to pay upfront i hope you understand. You can get my logo from facebook can you punch up the fun level on these icons but this looks perfect. Just Photoshop out the dog, add a baby, and make the curtains blue, or that sandwich needs to be more playful we are a non-profit organization, nor start on it today and we will talk about what i want next time . Could you do an actual logo instead ';
             $item->description = 'Featured Post';
             $item->save();
+
+            $item->attachTags(['php', 'laravel']);
+
             for ($i = 1; $i <= 20; $i++) {
                 $item = new Article();
                 $item->category_id = 1;
