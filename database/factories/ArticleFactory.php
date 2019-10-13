@@ -12,7 +12,7 @@ $factory->define(Article::class, function (Faker $faker) {
         'slug' => \Illuminate\Support\Str::slug($faker->name),
         'reading_time' => '1 Min Read',
         'summary' => $faker->realText(1000),
-        'content' => $faker->realText(30000),
+        'content' => $faker->realText(15000),
         'description' => $faker->realText(200),
     ];
 });

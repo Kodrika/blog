@@ -8,7 +8,7 @@
         <h1 class="font-bold break-normal text-3xl md:text-5xl">{!! $article->name !!}</h1>
     </div>
     <div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded"
-         style="background-image:url('{!! asset('files/articles/'.$article->image) !!}'); height: 75vh;"></div>
+         style="background-image:url('{!! $article->image_url !!}'); height: 75vh;"></div>
     <div class="container max-w-5xl mx-auto -mt-32">
         <div class="mx-0 sm:mx-6">
             <div class="bg-white w-full p-8 md:p-24 text-xl md:text-2xl text-gray-800 leading-normal rounded">
