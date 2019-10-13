@@ -22,8 +22,8 @@ class CategoryController extends Controller
     {
         $this->general->generateData();
         $this->general->generateTag();
-        $this->category->checkPage($category);
-        $this->category->getCategoryArticles($category);
+        $this->category->checkPage($category, $this->general);
+        $this->category->getCategoryArticles($category, $this->general);
         $this->general->showView('web.category');
     }
 }

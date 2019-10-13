@@ -32,4 +32,15 @@ return [
 
     'perPage' => env('BLOG_PER_PAGE', '9'),
 
+    'seo' => [
+
+        'title' => env('BLOG_TITLE', 'Kodrika Blog'),
+
+        'description' => env('BLOG_DESCRIPTION', 'Kodrika Blog'),
+
+        'keywords' => env('BLOG_KEYWORDS', 'Kodrika Blog'),
+
+    ],
+
+
 ];

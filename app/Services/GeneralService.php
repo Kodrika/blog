@@ -36,14 +36,6 @@ class GeneralService
     {
         $seo = config('project.seo');
 
-        $locale = app()->getLocale();
-
-        if (! isset($seo[$locale])) {
-            $seo = $seo['tr'];
-        } else {
-            $seo = $seo[$locale];
-        }
-
         $title = $seo['title'];
         if ($titleAppend != null) {
             $title = strip_tags($titleAppend).' - '.$seo['title'];

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class ArticleService
 {
-    public function getArticle($category, $slug)
+    public function getArticle($category, $slug, $service)
     {
         $article = Article::whereHas('category', function (Builder $query) use ($category) {
             $query->where('slug', $category);
@@ -18,6 +18,8 @@ class ArticleService
         view()->share('article', $article);
 
         view()->share('related', $related);
+
+        $service->generateTag($article->name.' - '.$article->category->name);
 
         return $article;
     }

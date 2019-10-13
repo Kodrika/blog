@@ -8,7 +8,7 @@ use App\Models\Page;
 
 class CategoryService
 {
-    public function checkPage($category)
+    public function checkPage($category, $service)
     {
         $page = Page::where('slug', $category)->first();
 
@@ -18,10 +18,12 @@ class CategoryService
 
         view()->share('page', $page);
 
+        $service->generateTag($page->name);
+
         response()->view('web.page')->throwResponse();
     }
 
-    public function getCategoryArticles($category)
+    public function getCategoryArticles($category, $service)
     {
         $category = Category::where('slug', $category)->firstOrFail();
 
@@ -30,6 +32,8 @@ class CategoryService
         view()->share('articles', $articles);
 
         view()->share('category', $category);
+
+        $service->generateTag($category->name, $category->description);
 
         return $articles;
     }
