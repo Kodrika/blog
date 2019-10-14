@@ -6,8 +6,10 @@ use App\Models\Traits\FullTextSearch;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Tags\HasTags;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 
-class Article extends Model
+class Article extends Model implements Feedable
 {
     use FullTextSearch;
     use HasTags;
@@ -118,5 +120,26 @@ class Article extends Model
     public function category()
     {
         return $this->hasOne('App\Models\Category', 'id', 'category_id');
+    }
+
+    /*
+     * FEED
+     */
+
+    public function toFeedItem()
+    {
+        return FeedItem::create([
+            'id' => $this->id,
+            'title' => $this->name,
+            'summary' => $this->summary,
+            'updated' => $this->updated_at,
+            'link' => $this->article_url,
+            'author' => config('project.author'),
+        ]);
+    }
+
+    public static function getFeedItems()
+    {
+        return Article::with('category')->get();
     }
 }
