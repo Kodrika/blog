@@ -12,8 +12,6 @@ Route::get('sitemap.xml', 'Web\SitemapController@index')->name('web.sitemap');
 //Tag
 Route::get('tag/{tag}', 'Web\TagController@index')->name('web.tag');
 
-Auth::routes();
-
 Route::feeds();
 
 //Category

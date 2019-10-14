@@ -24,7 +24,7 @@
     </a>
 @endif
 @if((bool)config('project.rss'))
-    <a class="inline-block text-white no-underline text-center h-10 p-2 md:h-auto md:p-4 hover:opacity-75" href="{!! route('web.rss') !!}">
+    <a class="inline-block text-white no-underline text-center h-10 p-2 md:h-auto md:p-4 hover:opacity-75" href="{!! route('feeds.main') !!}">
         <i class="fa fa-rss"></i>
     </a>
 @endif
