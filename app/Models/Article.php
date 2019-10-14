@@ -5,9 +5,9 @@ namespace App\Models;
 use App\Models\Traits\FullTextSearch;
 use DateTime;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Tags\HasTags;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
+use Spatie\Tags\HasTags;
 
 class Article extends Model implements Feedable
 {
@@ -140,6 +140,6 @@ class Article extends Model implements Feedable
 
     public static function getFeedItems()
     {
-        return Article::with('category')->get();
+        return self::with('category')->get();
     }
 }
