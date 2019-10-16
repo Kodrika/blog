@@ -27,7 +27,7 @@ class CategoryService
     {
         $category = Category::where('slug', $category)->firstOrFail();
 
-        $articles = Article::where('category_id', $category->id)->paginate(config('project.perPage'));
+        $articles = Article::where('category_id', $category->id)->with('category')->paginate(config('project.perPage'));
 
         view()->share('articles', $articles);
 
