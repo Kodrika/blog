@@ -1,5 +1,9 @@
 @extends('layouts.web.content')
 
+@section('header')
+    <link rel="amphtml" href="{!! $article->article_url !!}?amp=true">
+@endsection
+
 @section('content')
     <div class="text-center pt-8 md:pt-8">
         <p class="text-sm md:text-base text-darkslategray font-bold">{!! $article->localized_date !!} <span class="text-black">/</span>

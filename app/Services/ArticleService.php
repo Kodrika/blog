@@ -23,4 +23,11 @@ class ArticleService
 
         return $article;
     }
+
+    public function showView()
+    {
+        if(isset(request()->amp) && (bool)request()->amp === true)
+            response()->view('web.article_amp')->throwResponse();
+        response()->view('web.article')->throwResponse();
+    }
 }

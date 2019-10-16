@@ -23,6 +23,6 @@ class ArticleController extends Controller
         $this->general->generateData();
         $this->general->generateTag();
         $this->article->getArticle($category, $article, $this->general);
-        $this->general->showView('web.article');
+        $this->article->showView();
     }
 }

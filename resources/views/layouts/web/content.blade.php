@@ -3,6 +3,7 @@
 <head>
     @include('partials.meta')
     <link rel="stylesheet" href="{!! asset('css/blog.min.css') !!}" type="text/css">
+    @yield('header')
 </head>
 <body class="bg-gray-200 font-sans leading-normal tracking-normal flex min-vh-100 flex-col min-h-screen">
     <header>
