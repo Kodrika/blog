@@ -3,17 +3,16 @@
 namespace App\Services;
 
 use App\Models\User;
-use BaconQrCode\Renderer\ImageRenderer;
 use BaconQrCode\Renderer\Image\SvgImageBackEnd;
+use BaconQrCode\Renderer\ImageRenderer;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
 use BaconQrCode\Writer;
 
 class TwoFactorService
 {
-
     public function generateQRCode()
     {
-        if(!(bool)config('project.twoFactorRegister')){
+        if (! (bool) config('project.twoFactorRegister')) {
             abort(404);
         }
         $google2fa = app('pragmarx.google2fa');
@@ -40,5 +39,4 @@ class TwoFactorService
 
         view()->share('secret', $user->google2fa_secret);
     }
-
 }
