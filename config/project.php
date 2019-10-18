@@ -42,4 +42,8 @@ return [
 
     ],
 
+    'panelRoute' => env('BLOG_PANEL_ROUTE', 'panel'),
+
+    'twoFactorRegister' => env('BLOG_TWOFACTOR_REGISTER', 'true'),
+
 ];

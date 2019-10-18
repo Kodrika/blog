@@ -22,5 +22,7 @@
     "minutes": "dakika",
     "ago": "önce",
     "Tag": "Etiketi",
-    "No articles found.": "Yazı bulunamadı."
+    "No articles found.": "Yazı bulunamadı.",
+    "Scan the QR code or use the code :": "QR kodu tarayabilir yada kodu kullanabilirsiniz :",
+    "One Time Password": "Tek Kullanımlık Şifre"
 }

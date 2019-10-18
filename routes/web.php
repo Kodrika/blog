@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 //Home
 Route::get('/', 'Web\HomeController@index')->name('web.home');
@@ -12,6 +13,7 @@ Route::get('sitemap.xml', 'Web\SitemapController@index')->name('web.sitemap');
 //Tag
 Route::get('tag/{tag}', 'Web\TagController@index')->name('web.tag');
 
+//RSS
 Route::feeds();
 
 //Category

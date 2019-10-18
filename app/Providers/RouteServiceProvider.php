@@ -35,7 +35,25 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->mapAuthRoutes();
+        $this->mapAdminRoutes();
         $this->mapWebRoutes();
+    }
+
+    protected function mapAuthRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix(config('project.panelRoute'))
+            ->group(base_path('routes/auth.php'));
+    }
+
+    protected function mapAdminRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix(config('project.panelRoute'))
+            ->group(base_path('routes/admin.php'));
     }
 
     /**

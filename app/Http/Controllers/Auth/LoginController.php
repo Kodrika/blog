@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Services\GeneralService;
 
 class LoginController extends Controller
 {
@@ -32,8 +33,11 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(GeneralService $general)
     {
         $this->middleware('guest')->except('logout');
+        $this->general = $general;
+        $this->general->generateData();
+        $this->general->generateTag();
     }
 }
