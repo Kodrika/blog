@@ -7,7 +7,6 @@ use Illuminate\View\View;
 
 class NavbarComposer
 {
-
     protected $navbar;
 
     public function __construct(GeneralService $navbar)

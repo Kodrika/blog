@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Cache;
 
 class GeneralService
 {
-    public function returnNavbar(){
+    public function returnNavbar()
+    {
         return Cache::rememberForever('navbar', function () {
             $return = [];
             $navbar = \App\Models\Navigation::sort()->get();
