@@ -7,7 +7,6 @@ use Illuminate\View\View;
 
 class MetaComposer
 {
-
     protected $meta;
 
     public function __construct(GeneralService $meta)
