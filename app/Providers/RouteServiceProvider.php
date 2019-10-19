@@ -50,7 +50,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapAdminRoutes()
     {
-        Route::middleware('web')
+        Route::middleware(['web', 'auth', '2fa'])
             ->namespace($this->namespace)
             ->prefix(config('project.panelRoute'))
             ->group(base_path('routes/admin.php'));

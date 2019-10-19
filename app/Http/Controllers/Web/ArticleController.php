@@ -20,8 +20,6 @@ class ArticleController extends Controller
 
     public function show($category, $article)
     {
-        $this->general->generateData();
-        $this->general->generateTag();
         $this->article->getArticle($category, $article, $this->general);
         $this->article->showView();
     }

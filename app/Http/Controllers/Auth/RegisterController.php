@@ -20,8 +20,6 @@ class RegisterController extends Controller
 
     public function index()
     {
-        $this->general->generateData();
-        $this->general->generateTag();
         $this->twofa->generateQRCode();
         $this->general->showView('auth.2fa');
     }

@@ -9,10 +9,14 @@
     <header>
         @include('partials.navbars.content')
     </header>
-    <main class="flex-1">
+    @include('partials.sidebar')
+    <main class="flex-1" data-apoc-sidebar-sibling>
         @yield('content')
     </main>
     @include('partials.footer')
 <script src="{!! asset('js/blog.min.js') !!}" type="application/javascript"></script>
+@auth
+    <script src="{!! asset('js/admin.min.js') !!}" type="application/javascript"></script>
+@endauth
 </body>
 </html>

@@ -15,7 +15,6 @@
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="one_time_password"
                             placeholder="{{ __('One Time Password') }}" required autofocus />
-                        @error('password')
                         <button type="submit" class="w-full text-center py-3 rounded bg-darkslategray text-white hover:bg-green-dark focus:outline-none my-1">{{ __('Login') }}</button>
                     </form>
                 </div>

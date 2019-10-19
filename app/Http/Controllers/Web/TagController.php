@@ -20,8 +20,6 @@ class TagController extends Controller
 
     public function index($tag)
     {
-        $this->general->generateData();
-        $this->general->generateTag();
         $this->tag->getArticlesWithTag($tag, $this->general);
         $this->general->showView('web.tag');
     }

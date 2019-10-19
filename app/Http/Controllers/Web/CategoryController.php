@@ -20,8 +20,6 @@ class CategoryController extends Controller
 
     public function index($category)
     {
-        $this->general->generateData();
-        $this->general->generateTag();
         $this->category->checkPage($category, $this->general);
         $this->category->getCategoryArticles($category, $this->general);
         $this->general->showView('web.category');

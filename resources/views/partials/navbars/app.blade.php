@@ -8,6 +8,12 @@
                            href="{!! $v['url'] !!}">{!! $v['name'] !!}</a>
                     </li>
                 @endforeach
+                @auth
+                    <li class="mr-2">
+                        <a class="font-libre no-underline text-white border-b-2 border-transparent tracking-wide font-bold text-md py-3 mr-8 hover:opacity-75" id="trigger"
+                           href="javascript:">{{ __('Panel') }}</a>
+                    </li>
+                @endauth
             </ul>
         </div>
         <div class="flex w-1/2 sm:w-full md:w-full justify-end content-center  hidden md:hidden lg:flex xl:flex">

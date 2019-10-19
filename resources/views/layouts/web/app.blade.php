@@ -16,7 +16,8 @@
     </div>
 </div>
 </header>
-<main class="flex-1">
+@include('partials.sidebar')
+<main class="flex-1" data-apoc-sidebar-sibling>
     <div class="container px-2 md:px-0 max-w-6xl mx-auto -mt-32">
         <div class="mx-0 sm:mx-6">
             @include('partials.navbars.app')
@@ -26,5 +27,8 @@
 </main>
 @include('partials.footer')
 <script src="{!! asset('js/blog.min.js') !!}" type="application/javascript"></script>
+@auth
+    <script src="{!! asset('js/admin.min.js') !!}" type="application/javascript"></script>
+@endauth
 </body>
 </html>

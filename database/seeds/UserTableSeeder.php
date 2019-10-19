@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class UserTableSeeder extends Seeder
         $item = new User();
         $item->name = 'Demo Acc';
         $item->email = 'test@test.com';
-        $item->password = '123456';
+        $item->password = Hash::make('123456');
         $item->google2fa_secret = '11111';
         $item->save();
     }

@@ -51,7 +51,6 @@ class Handler extends ExceptionHandler
         }
         if ($this->isHttpException($exception) && $exception->getStatusCode() == 404) {
             $general = new \App\Services\GeneralService();
-            $general->generateData();
             $general->generateTag('404');
         }
 

@@ -6,13 +6,8 @@ use Illuminate\Support\Facades\Cache;
 
 class GeneralService
 {
-    public function generateData($menu = 0)
-    {
-        //Menu
-        $data['menu'] = $menu;
-
-        //Navbar
-        $data['navbar'] = Cache::rememberForever('navbar', function () {
+    public function returnNavbar(){
+        return Cache::rememberForever('navbar', function () {
             $return = [];
             $navbar = \App\Models\Navigation::sort()->get();
             foreach ($navbar as $v) {
@@ -24,12 +19,6 @@ class GeneralService
 
             return $return;
         });
-
-        view()->share('menu', $data['menu']);
-
-        view()->share('navbar', $data['navbar']);
-
-        return $data;
     }
 
     public function generateTag($titleAppend = null, $descriptionAppend = null, $keywordsAppend = null, $ogType = 'website', $twitterCard = 'summary', $newOgImage = null, $newTwitterImage = null)

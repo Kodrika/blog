@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Services\GeneralService;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -26,18 +25,17 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(GeneralService $general)
+    public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->general = $general;
-        $this->general->generateData();
-        $this->general->generateTag();
+        $this->middleware('throttle:5,1');
+        $this->redirectTo = config('project.panelRoute');
     }
 }
