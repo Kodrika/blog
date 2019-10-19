@@ -27,7 +27,11 @@
             </li>
             <li class="mt-4">
                 <a class="font-libre no-underline text-white tracking-wide font-bold text-md hover:opacity-75"
-                   href="javascript:">{{ __('Çıkış') }}</a>
+                   href="{{ route('logout') }}"
+                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Çıkış') }}</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
         </ul>
     </div>
