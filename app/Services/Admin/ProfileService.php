@@ -16,7 +16,7 @@ class ProfileService
             'name' => 'required',
             'email' => 'required',
         ];
-        if(!empty($input['password'])){
+        if (! empty($input['password'])) {
             $rules['password'] = 'required|string|min:6|pwned';
         }
         $validator = Validator::make($input, $rules);
@@ -30,15 +30,14 @@ class ProfileService
     public function updateData()
     {
         $input = request()->all();
-        $item =  User::find(1);
+        $item = User::find(1);
         $item->name = $input['name'];
         $item->email = $input['email'];
-        if(!empty($input['password'])){
+        if (! empty($input['password'])) {
             $item->password = Hash::make($input['password']);
         }
         $item->save();
 
         redirect()->back()->with(['OK' => true])->throwResponse();
     }
-
 }
