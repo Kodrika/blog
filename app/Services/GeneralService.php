@@ -75,6 +75,15 @@ class GeneralService
         response()->view($view, $data)->throwResponse();
     }
 
+    public function shareUser()
+    {
+        $user = auth()->user();
+
+        view()->share('user', $user);
+
+        return $user;
+    }
+
     public function shareVariable($key, $data)
     {
         view()->share($key, $data);

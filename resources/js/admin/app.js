@@ -16,6 +16,3 @@ document.getElementById('trigger').addEventListener('click', () => {
         sidebar.open();
     }
 });
-setTimeout(() => {
-    sidebar.teardown();
-}, 999999);

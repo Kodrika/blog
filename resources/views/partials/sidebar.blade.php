@@ -3,7 +3,7 @@
         <ul class="list-reset justify-between items-center">
             <li class="mt-4">
                 <a class="font-libre no-underline text-white tracking-wide font-bold text-md hover:opacity-75"
-                   href="javascript:">{{ __('Homepage') }}</a>
+                   href="{{ route('admin.home') }}">{{ __('Homepage') }}</a>
             </li>
             <li class="mt-4">
                 <a class="font-libre no-underline text-white tracking-wide font-bold text-md hover:opacity-75"
@@ -23,7 +23,7 @@
             </li>
             <li class="mt-4">
                 <a class="font-libre no-underline text-white tracking-wide font-bold text-md hover:opacity-75"
-                   href="javascript:">{{ __('Profile') }}</a>
+                   href="{{ route('admin.profile') }}">{{ __('Profile') }}</a>
             </li>
             <li class="mt-4">
                 <a class="font-libre no-underline text-white tracking-wide font-bold text-md hover:opacity-75"

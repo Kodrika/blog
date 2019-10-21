@@ -18,7 +18,8 @@
         "pragmarx/google2fa-laravel": "^1.2",
         "renatomarinho/laravel-page-speed": "^1.8",
         "spatie/laravel-feed": "^2.5",
-        "spatie/laravel-tags": "^2.5"
+        "spatie/laravel-tags": "^2.5",
+        "valorin/pwned-validator": "^1.3"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

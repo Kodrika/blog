@@ -115,6 +115,7 @@ return [
     'uploaded'             => ':attribute yüklemesi başarısız.',
     'url'                  => ':attribute biçimi geçersiz.',
     'uuid'                 => ':attribute geçerli bir UUID olmalıdır.',
+    'pwned' => 'Şifreniz çok basit',
 
     /*
     |--------------------------------------------------------------------------
